@@ -1,6 +1,6 @@
-# PicPay Simplificado — Python
+# Teste PicPay Simplificado — Python
 
-Backend REST para o desafio de processo seletivo, implementado com **Python + FastAPI + PostgreSQL + SQLAlchemy + Docker + Pytest + GitHub Actions**.
+Esse projeto é baseado no teste de backend da empresa PicPay. Backend REST para o desafio de processo seletivo, implementado com **Python + FastAPI + PostgreSQL + SQLAlchemy + Docker + Pytest + GitHub Actions**.
 
 ## Objetivos
 
@@ -175,3 +175,25 @@ O workflow em `.github/workflows/ci.yml` executa lint, análise estática e test
 * Mensageria dedicada (RabbitMQ/Kafka) em maior escala.
 * Ledger contábil imutável para auditoria financeira.
 
+## Explicação Técnica dos arquivos
+
+APP > API > HEALTH.PY
+
+Esse arquivo health.py implementa um Health check na API. 
+Sua funcionalidade: Ele permite verificar rapidamente se a aplicação está respondendo.
+
+## O que é API Router?
+É um mecanismo do FastAPI para organizar as rotas da aplicação em módulos separados.
+
+<img width="906" height="25" alt="image" src="https://github.com/user-attachments/assets/17787136-9d4a-4a0a-ad62-ae8733c4bfee" />
+Aqui estamos importando APIRouter do FastAPI
+
+## Criação do Router
+
+<img width="879" height="32" alt="image" src="https://github.com/user-attachments/assets/746a41f0-fc4d-4c33-ab9b-10a6cd6e3af2" />
+Aqui criamos uma instância de APIRouter, um conjunto de endpoints relacionados. Nesse caso, o router contém endpoints relacionados à saúde da aplicação
+
+O que significa tags health
+<img width="406" height="32" alt="image" src="https://github.com/user-attachments/assets/7c2df39d-9bdd-44ee-9cc2-e3197a4df3c0" />
+
+É uma categoria/titulo utilizado principalmente para organização da documentação automática do FastAPI.
