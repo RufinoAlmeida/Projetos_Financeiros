@@ -6,19 +6,19 @@ Backend REST para o desafio de processo seletivo, implementado com **Python + Fa
 
 A implementação cobre as regras centrais do desafio:
 
-- Usuários comuns e lojistas.
-- CPF/CNPJ e e-mail únicos.
-- Carteira por usuário.
-- Usuário comum pode transferir.
-- Lojista apenas recebe.
-- Validação de saldo.
-- Autorização em serviço externo via GET.
-- Transferência atômica com transação de banco.
-- Registro da transferência.
-- Notificação desacoplada por **Transactional Outbox**.
-- Tratamento de erros de negócio.
-- Testes unitários.
-- Docker para execução reproduzível.
+* Usuários comuns e lojistas.
+* CPF/CNPJ e e-mail únicos.
+* Carteira por usuário.
+* Usuário comum pode transferir.
+* Lojista apenas recebe.
+* Validação de saldo.
+* Autorização em serviço externo via GET.
+* Transferência atômica com transação de banco.
+* Registro da transferência.
+* Notificação desacoplada por **Transactional Outbox**.
+* Tratamento de erros de negócio.
+* Testes unitários.
+* Docker para execução reproduzível.
 
 ## Arquitetura
 
@@ -62,21 +62,21 @@ As carteiras são carregadas com `SELECT ... FOR UPDATE` em bancos que suportam 
 
 ```json
 {
-  "name": "Amador Almeida",
+  "name": "Zeze",
   "document": "12345678909",
-  "email": "amador@example.com",
+  "email": "zeze@example.com",
   "password": "Senha@123",
-  "user_type": "common"
+  "user\\\_type": "common"
 }
 ```
 
 ### Consultar carteira
 
-`GET /wallets/{user_id}`
+`GET /wallets/{user\\\_id}`
 
 ### Depósito de demonstração
 
-`POST /wallets/{user_id}/deposit`
+`POST /wallets/{user\\\_id}/deposit`
 
 Este endpoint existe apenas para facilitar o teste do desafio e deve ser removido/substituído por um fluxo financeiro autorizado em produção.
 
@@ -120,15 +120,15 @@ Swagger:
 Crie um ambiente virtual e instale:
 
 ```bash
-pip install -e '.[dev]'
+pip install -e '.\\\[dev]'
 ```
 
-Defina `DATABASE_URL` ou use o SQLite padrão para desenvolvimento/testes simples.
+Defina `DATABASE\\\_URL` ou use o SQLite padrão para desenvolvimento/testes simples.
 
 Inicialize o banco:
 
 ```bash
-python -m app.infrastructure.database.init_db
+python -m app.infrastructure.database.init\\\_db
 ```
 
 Execute:
@@ -167,10 +167,11 @@ O workflow em `.github/workflows/ci.yml` executa lint, análise estática e test
 
 ## Próximas evoluções
 
-- Idempotency-Key para evitar transferência duplicada em retries do cliente.
-- Autenticação/autorização real.
-- Worker dedicado para outbox com retry/backoff.
-- Métricas e tracing com OpenTelemetry.
-- Redis para cache de dados não financeiros.
-- Mensageria dedicada (RabbitMQ/Kafka) em maior escala.
-- Ledger contábil imutável para auditoria financeira.
+* Idempotency-Key para evitar transferência duplicada em retries do cliente.
+* Autenticação/autorização real.
+* Worker dedicado para outbox com retry/backoff.
+* Métricas e tracing com OpenTelemetry.
+* Redis para cache de dados não financeiros.
+* Mensageria dedicada (RabbitMQ/Kafka) em maior escala.
+* Ledger contábil imutável para auditoria financeira.
+
