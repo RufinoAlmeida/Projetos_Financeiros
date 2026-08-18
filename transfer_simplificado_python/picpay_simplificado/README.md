@@ -186,14 +186,17 @@ Sua funcionalidade: Ele permite verificar rapidamente se a aplicação está res
 É um mecanismo do FastAPI para organizar as rotas da aplicação em módulos separados.
 
 <img width="906" height="25" alt="image" src="https://github.com/user-attachments/assets/17787136-9d4a-4a0a-ad62-ae8733c4bfee" />
+
 Aqui estamos importando APIRouter do FastAPI
 
 ## Criação do Router
 
 <img width="879" height="32" alt="image" src="https://github.com/user-attachments/assets/746a41f0-fc4d-4c33-ab9b-10a6cd6e3af2" />
+
 Aqui criamos uma instância de APIRouter, um conjunto de endpoints relacionados. Nesse caso, o router contém endpoints relacionados à saúde da aplicação
 
 O que significa tags health
+
 <img width="406" height="32" alt="image" src="https://github.com/user-attachments/assets/7c2df39d-9bdd-44ee-9cc2-e3197a4df3c0" />
 
 É uma categoria/titulo utilizado principalmente para organização da documentação automática do FastAPI.
